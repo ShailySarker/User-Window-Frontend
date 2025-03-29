@@ -1,69 +1,66 @@
-import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-import { deleteUser, getUsers, updateUser } from "../../apis/userApi";
+import { createSlice } from '@reduxjs/toolkit';
 
-export const fetchUsers = createAsyncThunk('users/fetchUsers', async (page = 1) => {
-  const response = await getUsers(page);
-  return response;
-});
-
-export const editUser = createAsyncThunk('users/editUser', async ({ id, userData }) => {
-  const response = await updateUser(id, userData);
-  return { id, userData: response };
-});
-
-export const removeUser = createAsyncThunk('users/removeUser', async (id) => {
-  await deleteUser(id);
-  return id;
-});
+const initialState = {
+    users: [],
+    currentPage: 1,
+    totalPages: 1,
+    loading: false,
+    error: null,
+    editLoading: false,
+    editError: null
+};
 
 const usersSlice = createSlice({
-  name: 'users',
-  initialState: {
-    data: [],
-    page: 1,
-    totalPages: 1,
-    status: 'idle',
-    error: null,
-    editStatus: 'idle',
-  },
-  reducers: {
-    setPage: (state, action) => {
-      state.page = action.payload;
-    },
-  },
-  extraReducers: (builder) => {
-    builder
-      .addCase(fetchUsers.pending, (state) => {
-        state.status = 'loading';
-      })
-      .addCase(fetchUsers.fulfilled, (state, action) => {
-        state.status = 'succeeded';
-        state.data = action.payload.data;
-        state.page = action.payload.page;
-        state.totalPages = action.payload.total_pages;
-      })
-      .addCase(fetchUsers.rejected, (state, action) => {
-        state.status = 'failed';
-        state.error = action.error.message;
-      })
-      .addCase(editUser.pending, (state) => {
-        state.editStatus = 'loading';
-      })
-      .addCase(editUser.fulfilled, (state, action) => {
-        state.editStatus = 'succeeded';
-        const index = state.data.findIndex(user => user.id === action.payload.id);
-        if (index !== -1) {
-          state.data[index] = { ...state.data[index], ...action.payload.userData };
+    name: 'users',
+    initialState,
+    reducers: {
+        fetchUsersStart: (state) => {
+            state.loading = true;
+            state.error = null;
+        },
+        fetchUsersSuccess: (state, action) => {
+            state.loading = false;
+            state.users = action.payload.data;
+            state.currentPage = action.payload.page;
+            state.totalPages = action.payload.total_pages;
+        },
+        fetchUsersFailure: (state, action) => {
+            state.loading = false;
+            state.error = action.payload;
+        },
+        setPage: (state, action) => {
+            state.currentPage = action.payload;
+        },
+        editUserStart: (state) => {
+            state.editLoading = true;
+            state.editError = null;
+        },
+        editUserSuccess: (state, action) => {
+            state.editLoading = false;
+            const index = state.users.findIndex(u => u.id === action.payload.id);
+            if (index !== -1) {
+                state.users[index] = action.payload;
+            }
+        },
+        editUserFailure: (state, action) => {
+            state.editLoading = false;
+            state.editError = action.payload;
+        },
+        deleteUserSuccess: (state, action) => {
+            state.users = state.users.filter(u => u.id !== action.payload);
         }
-      })
-      .addCase(editUser.rejected, (state) => {
-        state.editStatus = 'failed';
-      })
-      .addCase(removeUser.fulfilled, (state, action) => {
-        state.data = state.data.filter(user => user.id !== action.payload);
-      });
-  },
+    }
 });
 
-export const { setPage } = usersSlice.actions;
+// Export actions
+export const {
+    fetchUsersStart,
+    fetchUsersSuccess,
+    fetchUsersFailure,
+    setPage,
+    editUserStart,
+    editUserSuccess,
+    editUserFailure,
+    deleteUserSuccess
+} = usersSlice.actions;
 export default usersSlice.reducer;
