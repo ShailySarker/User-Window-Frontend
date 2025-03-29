@@ -9,6 +9,7 @@ export const fetchUsers = (page = 1) => async (dispatch) => {
     dispatch(fetchUsersStart());
     const response = await axios.get(`${BASE_URL}/users?page=${page}`);
     dispatch(fetchUsersSuccess(response?.data));
+    console.log(response?.data)
   } catch (error) {
     const errorMessage = error.response?.data?.error || 'Failed to fetch users';
     dispatch(fetchUsersFailure(errorMessage));
