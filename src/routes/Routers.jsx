@@ -5,6 +5,7 @@ import Login from '../pages/Login/Login';
 import MainLayout from '../layouts/MainLayout';
 import ProtectedRoute from './ProtectedRoute';
 import Users from '../pages/Users/Users';
+import SingleUser from '../pages/SingleUser/SingleUser';
 
 const Routers = () => {
     return (
@@ -23,6 +24,14 @@ const Routers = () => {
                     element={
                         <ProtectedRoute>
                             <Users />
+                        </ProtectedRoute>
+                    }
+                />
+                <Route
+                    path="/users/edit/:id"
+                    element={
+                        <ProtectedRoute>
+                            <SingleUser />
                         </ProtectedRoute>
                     }
                 />

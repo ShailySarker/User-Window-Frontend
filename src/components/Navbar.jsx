@@ -14,7 +14,7 @@ const Navbar = () => {
     };
 
     return (
-        <nav className="bg-white shadow-sm">
+        <nav className="bg-white shadow-md">
             <div className="xl:px-10 lg:px-8 md:px-6 px-4 xl:py-5 py-4 flex justify-between items-center">
                 <h1 className="xl:text-2xl/none lg:text-xl/none text-lg/normal font-bold flex items-center gap-2 text-[#A21D3C]"><FaUsers className='lg:text-2xl md:text-xl text-lg'/>User Window</h1>
                 <button
