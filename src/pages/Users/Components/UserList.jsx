@@ -110,7 +110,7 @@ const UserList = () => {
                 <h2 className="xl:text-2xl lg:text-xl text-lg font-bold text-[#A21D3C]">
                     Users List
                 </h2>
-                <div className="relative w-full md:w-[32%]">
+                <div className="relative w-full lg:w-[32%] md:w-[60%]">
                     <input
                         type="text"
                         placeholder="Search by name or email..."
@@ -139,7 +139,7 @@ const UserList = () => {
                     {searchTerm ? 'No users match your search' : 'No users found'}
                 </div>
             ) : (
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:gap-6 lg:gap-5 md:gap-4 gap-3">
                     {filteredUsers?.map((user) => (
                         <UserCard
                             key={user?.id}
@@ -154,7 +154,7 @@ const UserList = () => {
 
             {/* Pagination Controls */}
             {totalPages > 1 && (
-                <div className="flex justify-center mt-10">
+                <div className="flex justify-center xl:mt-16 md:mt-14 mt-10">
                     <nav className="flex items-center gap-2">
                         <button
                             onClick={() => handlePageChange(localPage - 1)}

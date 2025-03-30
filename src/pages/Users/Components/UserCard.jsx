@@ -46,8 +46,8 @@ const UserCard = ({ user, onEdit, onDelete, isDeleting = false }) => {
       <div className="p-4">
         <div className="flex items-center mb-4">
           <img
-            src={user.avatar}
-            alt={`${user.first_name} ${user.last_name}`}
+            src={user?.avatar}
+            alt={`${user?.first_name} ${user?.last_name}`}
             className="w-16 h-16 rounded-full object-cover border-2 border-[#A21D3C]"
             onError={(e) => {
               e.target.src = 'https://via.placeholder.com/150'; // Fallback avatar
@@ -55,28 +55,28 @@ const UserCard = ({ user, onEdit, onDelete, isDeleting = false }) => {
           />
           <div className="ml-4">
             <h3 className="font-bold text-lg text-gray-800 truncate">
-              {user.first_name} {user.last_name}
+              {user?.first_name} {user?.last_name}
             </h3>
-            <p className="text-gray-600 text-sm truncate">{user.email}</p>
+            <p className="text-gray-600 text-sm truncate">{user?.email}</p>
           </div>
         </div>
         <div className="flex justify-end space-x-2">
           <button
             onClick={onEdit}
-            className="px-4 py-2 font-medium bg-blue-600 text-white rounded-md hover:bg-blue-700 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-[#A21D3C] focus:ring-opacity-50"
-            aria-label={`Edit ${user.first_name} ${user.last_name}`}
+            className="px-4 py-2 md:text-base/none text-sm/none font-medium bg-blue-600 text-white rounded-md hover:bg-blue-700 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-[#A21D3C] focus:ring-opacity-50"
+            aria-label={`Edit ${user?.first_name} ${user?.last_name}`}
           >
             Edit
           </button>
           <button
             onClick={onDelete}
             disabled={isDeleting}
-            className={`px-4 py-2 font-medium rounded-md transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-opacity-50 ${
+            className={`px-4 py-2 md:text-base/none text-sm/none font-medium rounded-md transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-opacity-50 ${
               isDeleting
                 ? 'bg-gray-400 text-gray-600 cursor-not-allowed focus:ring-gray-400'
                 : 'bg-red-600 text-white hover:bg-red-700 focus:ring-red-600'
             }`}
-            aria-label={`Delete ${user.first_name} ${user.last_name}`}
+            aria-label={`Delete ${user?.first_name} ${user?.last_name}`}
           >
             {isDeleting ? (
               <span className="flex items-center justify-center">
