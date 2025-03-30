@@ -33,39 +33,42 @@ JavaScript, Tailwind CSS, ReactJS, React Router, Redux, Axios, Local-Storage, mo
 
 # Description
 
- ** 1. User Authentication**
+** 1. User Authentication**
 
-- Secure login system using JWT tokens
+    - Secure login system using JWT tokens
 
-- Token persistence in localStorage
+    - Token persistence in localStorage
 
-- Protected routes for authenticated users only
+    - Protected routes for authenticated users only
 
-- Error handling for failed login attempts
+    - Error handling for failed login attempts
+
   
- ** 2. User Management**
+** 2. User Management**
 
-  - View paginated list of all users
+    - View paginated list of all users
 
-- Detailed user cards with avatars and information
+    - Detailed user cards with avatars and information
 
-- Edit existing user profiles
+    - Edit existing user profiles
 
-- Delete users with confirmation
+    - Delete users with confirmation
 
-- Responsive design for all screen sizes
+    - Responsive design for all screen sizes
 
-- ** 3. Advanced Functionality**
 
-  - Client-side search and filtering
+** 3. Advanced Functionality**
 
-- Pagination with dynamic page calculation
+    - Client-side search and filtering
+  
 
-- Loading states for all async operations
+    - Pagination with dynamic page calculation
 
-- Comprehensive error handling
+    - Loading states for all async operations
 
-- Form validation for all inputs
+    - Comprehensive error handling
+
+    - Form validation for all inputs
   
 # Run
 
