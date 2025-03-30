@@ -3,8 +3,21 @@
 # Website Link:
 https://user-window-frontend.vercel.app/
 
+# Overview:
+User Window is a comprehensive User Management System built with modern web technologies to provide a complete CRUD interface for managing user data. The application features authentication, pagination, and search functionality, all powered by the Reqres.in mock API.
+
 # Technologies:
 JavaScript, Tailwind CSS, ReactJS, React Router, Redux, Axios, Local-Storage, mock API.
+
+# Features
+
+- 🔒 JWT Authentication
+- 👥 User listing with pagination
+- 🔍 Search functionality
+- ✏️ Edit user profiles
+- 🗑️ Delete users with confirmation
+- 📱 Fully responsive design
+
 
 # Technical Stack
 
@@ -18,10 +31,7 @@ JavaScript, Tailwind CSS, ReactJS, React Router, Redux, Axios, Local-Storage, mo
 | Icons             | React Icons                         |
 | UI Components     | Custom-built                        |
 
-# Objective 
-User Window is a comprehensive User Management System built with React, Redux, and the Reqres.in mock API. It provides a complete CRUD (Create, Read, Update, Delete) interface for managing user data with authentication, pagination, and search functionality..
-
-# Features
+# Description
 
  ** 1. User Authentication**
 
