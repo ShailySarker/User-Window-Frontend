@@ -1,12 +1,72 @@
-# React + Vite
+# Project Name: User Window Website
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# Website Link:
+https://user-window-frontend.vercel.app/
 
-Currently, two official plugins are available:
+# Technologies:
+JavaScript, Tailwind CSS, ReactJS, React Router, Redux, Axios, Local-Storage, mock API.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+# Technical Stack
 
-## Expanding the ESLint configuration
+| Category          | Technology                          |
+|-------------------|-------------------------------------|
+| Frontend          | React 18 (Functional Components)    |
+| State Management  | Redux Toolkit (Slices & Thunks)     |
+| Routing           | React Router v6                     |
+| API Client        | Axios                               |
+| Styling           | Tailwind CSS                        |
+| Icons             | React Icons                         |
+| UI Components     | Custom-built                        |
 
-If you are developing a production application, we recommend using TypeScript and enable type-aware lint rules. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+# Objective 
+User Window is a comprehensive User Management System built with React, Redux, and the Reqres.in mock API. It provides a complete CRUD (Create, Read, Update, Delete) interface for managing user data with authentication, pagination, and search functionality..
+
+# Features
+
+ ** 1. User Authentication**
+
+- Secure login system using JWT tokens
+
+- Token persistence in localStorage
+
+- Protected routes for authenticated users only
+
+- Error handling for failed login attempts
+  
+ ** 2. User Management**
+
+  - View paginated list of all users
+
+- Detailed user cards with avatars and information
+
+- Edit existing user profiles
+
+- Delete users with confirmation
+
+- Responsive design for all screen sizes
+
+- ** 3. Advanced Functionality**
+
+  - Client-side search and filtering
+
+- Pagination with dynamic page calculation
+
+- Loading states for all async operations
+
+- Comprehensive error handling
+
+- Form validation for all inputs
+  
+# Run
+
+## Clone this repository
+$ git clone https://github.com/ShailySarker/User-Window-Frontend  
+
+## Go into the repository
+$ cd User-Window-Frontend
+
+## Install dependencies
+$ npm install
+
+## Run the app
+$ npm run dev
